@@ -1,0 +1,72 @@
+/* background: linear-gradient(135deg, rgb(247, 104, 8) 0%, rgb(253, 126, 23)
+      50%,
+    rgb(255, 144, 41) 100%); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      135deg,
+      rgb(247, 104, 8, 0.5) 0%,
+      rgb(253, 126, 23, 0.5) 50%,
+      rgb(255, 144, 41, 0.5) 100%
+    ),
+    url(bg.jpg);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container div + div {
+  margin-top: 10rem;
+}
+
+.container div {
+  position: relative;
+}
+
+input {
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 10rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  position: absolute;
+  font-size: 2.4rem;
+  top: 25%;
+  left: 10%;
+  transition: all 0.4s ease;
+}
+
+input:focus ~ label,
+input:not(:focus):valid ~ label {
+  top: -6rem;
+  left: 0;
+  background: linear-gradient(
+    135deg,
+    rgb(247, 104, 8) 0%,
+    rgb(253, 126, 23) 50%,
+    rgb(255, 144, 41) 100%
+  );
+  color: white;
+  border-radius: 10rem;
+  padding: 1rem 3rem;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 1);
+}
